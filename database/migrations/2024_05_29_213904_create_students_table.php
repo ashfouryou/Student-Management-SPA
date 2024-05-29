@@ -11,9 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
+
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('class_id')->constrained();
+            $table->foreignId('section_id')->constrained();
+            $table->string('name');
+            $table->string('email')->unique();
             $table->timestamps();
+            // Add indexes for foreign keys
+            $table->index('class_id');
+            $table->index('section_id');
         });
     }
 
