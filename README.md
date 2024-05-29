@@ -31,3 +31,14 @@ To get started, follow these steps:
     ```
 
     This command will initiate the development server, allowing you to access your application, usually at `http://localhost:8000`.
+
+6. Create first model and migration called classes,student:
+
+    ```
+    php artisan make:model Classes -m 
+    ```
+
+    This will create a model Classes along with its database migration file similarly created for Student.
+
+
+
