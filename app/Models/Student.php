@@ -13,12 +13,14 @@ class Student extends Model
 
     protected $fillable = ['name','class_id','section_id','email'];
 
+    protected $with = ['classes','section'];
+
     public function classes(){
-        return $this->hasMany(Classes::class);
+        return $this->belongsTo(Classes::class,'class_id');
     }
 
     public function section(){
-        return $this->belongsTo(Section::class);
+        return $this->belongsTo(Section::class,'section_id');
     }
 
 }
